@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo JS</title>
+  <style>
+/*.bg-img{*/
+/*  background-image: url("data:image/png;base64,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");*/
+/*}*/
+button{
+  width: 100px;
+  height: 50px;
+}
+  </style>
+</head>
+<body>
+<button class="bg-img" onclick="alert('Hello world')">alert</button>
+<button class="bg-img" id="btn">alert external</button>
+<button class="bg-img" onclick="confirm('Hello world')">confirm</button>
+<button class="bg-img" onclick="prompt('Hello world')">prompt</button>
+
+<input placeholder="Nhap diem hoc vien" id="diemhocvien">
+<label for="diemhocvien"></label>
+</body>
+<!--Internal JS-->
+<script>
+<!--  Khi nút button có id btn có sự kiện click-->
+// addEventListener: lắng nghe sự kện click
+// Khi sự kiện click xảy ra thì nó sẽ thực hiện function
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click",function () {
+  btn.style.backgroundColor="blue";
+  btn.style.color="#fff";
+  btn.innerText="Unlike";
+})
+
+let a = +prompt("a")
+let b = +prompt("b")
+alert(a + b)
+</script>
+
+<!--External JS-->
+<script src=""></script>
+</html>

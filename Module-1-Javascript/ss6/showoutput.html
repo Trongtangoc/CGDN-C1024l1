@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show output</title>
+</head>
+
+<body>
+  <button id="btn-alert" onclick="myAlert()"> Alert</button>
+  <button id="btn-inerHTML"> inerHTML</button>
+    <p ></p>
+  <button id="btn-write" onclick="btnWrite()"> Write</button>
+  <button id="btn-consolelog" onmouseover="showMessage()">console.log </button>
+</body>
+<script>
+    //alert
+    function myAlert() {
+        alert("Hello world alert")
+    }
+    //innerHTML
+  let   btnInner = document.getElementById("btn-inerHTML");
+        btnInner.addEventListener("mouseover", myInnnerHTML);
+        btnInner.addEventListener("mouseout",myInnerHTML2)
+    function myInnnerHTML(){
+        btnInner.innerHTML="Hello world innerHTML"
+    }
+    function myInnerHTML2(){
+            btnInner.innerHTML="Back"
+        }
+
+    //document write
+    function btnWrite(){
+        document.write("Hello world write")
+    }
+
+    function showMessage(){
+        console.log('Xin chào!');
+    }
+
+</script>
+
+</html>

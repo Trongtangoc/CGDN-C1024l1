@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Luyện tập mảng 01</title>
+</head>
+
+<body>
+  <button onclick="bai1PrinftSoNguyen()">Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+    Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</button>
+  <p id="showResult1"></p>
+  <p id="daySoLonHon10"></p>
+  <button onclick="bai2PrinftSoNguyenKhacNhau()">Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác
+    nhau.
+    Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</button>
+  <p id="showResult2"></p>
+  <p id="showResultMax"></p>
+  <button onclick="bai3PrinftSoNguyenKhacNhau()">Bài 3- Viết chương trình khởi tạo mảng số nguyên.
+    Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung
+    bình của các phần tử trong mảng.</button>
+  <p id="showResult3"></p>
+  <p id="showResultMax3"></p>
+  <p id="showResultTB3"> </p>
+  <button onclick="bai4Reverse()">Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử
+    trong mảng đó.
+  </button>
+  <p id="showResult4"></p>
+  <button onclick="bai5CountSoNguyenAm()">Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi
+  </button>
+  <button onclick="bai6FindV()">Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo
+    phần tử số nguyên V.
+    Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số
+    nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</button>
+  <button onclick="bai7DeleteV()">Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo
+    phần tử số nguyên V.
+    Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá
+    V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối
+    cùng của mảng)</button>
+  <button onclick="bai8Sort()">Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</button>
+
+  <button onclick="bai9Concat()">Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng
+    a và b.
+    Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần
+    tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.</button>
+
+</body>
+<script>
+  function bai1PrinftSoNguyen() {
+    let arraySoNguyen = [];
+    let arrayLonHon10 = []
+    for (let i = 0; i < 20; i++) {
+      arraySoNguyen.push(i);
+      if (arraySoNguyen[i] >= 10) {
+        arrayLonHon10.push(arraySoNguyen[i]);
+      }
+    }
+
+    document.getElementById("showResult1").innerHTML = ` Dãy số nguyên là: ${arraySoNguyen}`;
+    document.getElementById("daySoLonHon10").innerHTML = `Dãy số lớn hơn hoặc bằng 10 là : ${arrayLonHon10}`;
+  }
+  function bai2PrinftSoNguyenKhacNhau() {
+    let arraySoNguyen = [];
+    let i = 0;
+    let max = 0;
+    let maxI = 0;
+    let randomNumber;
+
+    for (i; i < 10; i++) {
+      randomNumber = Math.floor(Math.random() * 10);
+      arraySoNguyen.push(randomNumber);
+      if (arraySoNguyen[i] > max) {
+        max = arraySoNguyen[i];
+        maxI = i;
+      }
+    }
+    document.getElementById("showResult2").innerHTML = ` Dãy số nguyên là: ${arraySoNguyen}`;
+    document.getElementById("showResultMax").innerHTML = ` số nguyên lớn nhất là: ${max} nằm ở vị trí ${maxI}`;
+  }
+  function bai3PrinftSoNguyenKhacNhau() {
+    let arraySoNguyen = [];
+    let max = 0; // Đặt giá trị max ban đầu rất nhỏ
+    let tong = 0; // Biến để tính tổng các phần tử
+
+    // Khởi tạo mảng với 10 số ngẫu nhiên từ 0 đến 100
+    for (let i = 0; i < 10; i++) {
+      let randomNumber = Math.floor(Math.random() * 101); // Số ngẫu nhiên từ 0 đến 100
+      arraySoNguyen.push(randomNumber);
+
+      // Tìm giá trị lớn nhất
+      if (randomNumber > max) {
+        max = randomNumber;
+      }
+
+      // Cộng dồn các phần tử để tính tổng
+      tong += randomNumber;
+    }
+
+    // Tính giá trị trung bình
+    let tb = tong / arraySoNguyen.length;
+
+    // Hiển thị kết quả
+    document.getElementById("showResult3").innerHTML = `Dãy số nguyên là: ${arraySoNguyen}`;
+    document.getElementById("showResultMax3").innerHTML = `Giá trị lớn nhất là: ${max}`;
+    document.getElementById("showResultTB3").innerHTML = `Giá trị trung bình là: ${tb}`;
+  }
+  function bai4Reverse() {
+    let array = [1, 5, 3, 9, 6, 4, 2]
+    let newArray = array.reverse()
+    document.getElementById("showResult4").innerHTML = newArray;
+  }
+  function bai5CountSoNguyenAm() {
+    let array = [1, 3, 6, -4, -9, -6, 3];
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] < 0) {
+        count++;
+        console.log(array[i]);
+      }
+    }
+    console.log(count)
+  }
+  function bai6FindV() {
+    let array = [1, 3, 8, 4, 23, 56, 23, 6, 4];
+    let soNguyenV = +prompt("Nhập số nguyên V: ");
+    let isFind = false;
+    for (let i = 0; i < array.length; i++) {
+      if (soNguyenV === array[i]) {
+        isFind = true
+        alert(`${soNguyenV} is in the array`);
+        break;
+      }
+    }
+    if (!isFind) {
+      alert(`${soNguyenV} is not in the array`);
+    }
+    return isFind;
+  }
+  function bai7DeleteV() {
+    let array = [1, 5, 8, 12, 23, 56, 8, 14, 3, 9];
+    let soNguyenV = +prompt("Nhập số nguyên V:");
+    let index = -1;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] === soNguyenV) {
+        index = i;
+        break;
+      }
+    }
+    if (index !== -1) {
+      for (let i = index; i < array.length - 1; i++) {
+        array[i] = array[i + 1];
+      }
+      array[array.length - 1] = 0;
+    }
+    console.log("Mảng sau khi xoá V:", array);
+  }
+
+  function bai8Sort() {
+    let array = [1, 5, 8, 12, 23, 56, 8, 14, 3, 9];
+    let newArray = array.sort(function (a, b) {
+      return b - a;
+    });
+    console.log(newArray)
+  }
+  function bai9Concat() {
+    let array_1 = [1, 5, 8, 12, 23, 56, 8, 14, 3, 9];
+    let array_2 = [45, 2, 8, 5, 3, 2, 6, 3, 4, 6, 7,]
+    let conCatArray = [];
+    conCatArray = array_1.concat(array_2)
+    console.log(conCatArray)
+  }
+</script>
+
+</html>

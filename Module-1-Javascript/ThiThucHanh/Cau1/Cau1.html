@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="arr"></p>
+<p id="boiChung"></p>
+<p id="result"></p>
+
+</body>
+<script>
+    let arr = [3, 5, 10, 15, 6, 23, 19, 25, 1, 7, 30, 60];
+    document.getElementById("arr").innerHTML = `Mảng ban đầu là: ${arr}`
+    let boiChung = [];
+    let sum = 0;
+    if (arr.length > 20) {
+        alert("Mảng ban đầu phải ít hơn 20 phần tử")
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 === 0 && arr[i] % 5 === 0) {
+                if (boiChung.length < 20) {
+                    boiChung.push(arr[i])
+                    sum += arr[i]
+                }
+            }
+        }
+    }
+    document.getElementById("boiChung").innerHTML = `Các số là bội chung của 3 và 5 là : ${boiChung}`
+    document.getElementById("result").innerHTML = `Tổng các số là bội chung của 3 và 5 là: ${sum} `
+
+</script>
+</html>

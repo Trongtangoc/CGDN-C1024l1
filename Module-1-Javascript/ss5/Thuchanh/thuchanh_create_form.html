@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .margin {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="get">
+        <h2>Order Form</h2>
+        <h5>What would you like to buy?</h5>
+        <select>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <h5>How many would you like to order?</h5>
+        <input type="radio" name="order" id="" />1 - $10<br>
+        <input type="radio" name="order" id="" />2 - $20<br>
+        <input type="radio" name="order" id="" style="margin-bottom: 25px;" />3 - $25<br>
+        <label for="name">Name: <span class="req" style="color:red">*</span></label><br>
+        <input class="margin" type="text" name="fname" id="fname" placeholder="FirstName">
+        <input type="text" name="lname" id="lname" placeholder="LaseName"><br>
+        <label for="email">Email: <span class="req" style="color:red">*</span></label><br>
+        <input class="margin" type="text" name="email" id="email" placeholder="" size="30"><br>
+        <label for="phone">Phone Number: <span class="req" style="color:red">*</span></label><br>
+        <input class="margin" type="text" name="phone1" id="phone1" placeholder="" size="10"> -
+        <input class="margin" type="text" name="phone2" id="phone2" placeholder="" size="10"> -
+        <input width="10px" height="100px" class="margin" type="text" name="phone3" id="phone3" placeholder=""
+            size="10"> <br>
+        <button>Submit</button>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp For</title>
+</head>
+<body>
+<button onclick="bai1ShowNum()">Bài 1</button>
+<p id="showResult1"></p>
+<button onclick="bai2CalculSum()">Bài 2: Tính tổng</button>
+<p id="showResult2"></p>
+</body>
+<script>
+    function bai1ShowNum(){
+        let i = 0;
+        let result = "";
+        for (i; i < 5; i++){
+            result += `The number is ${i} <br>`
+        }
+        document.getElementById("showResult1").innerHTML = result;
+    }
+    function bai2CalculSum(){
+        let num = prompt("Nhập một số bất kỳ lớn hơn không");
+        let sum = 0 ;
+        for (let i = 0; i < num ; i++){
+            sum += i;
+        }
+        document.getElementById("showResult2").innerHTML = `Tổng các số từ 0 đến ${num} là ${sum}`;
+    }
+
+</script>
+</html>

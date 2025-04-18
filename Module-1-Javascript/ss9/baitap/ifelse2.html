@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        align-items: center;
+        width: 500px;
+        padding: 10px;
+        margin: 10px 0 0 50px;
+        text-align: left;
+        background-color: rgb(50, 155, 58);
+        color: #fff;
+        border: none;
+      }
+      button:hover {
+        scale: 1.1;
+        background-color: #4c7edb;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="myFunctionCtoF()">Bài 1: đổi độ C sang độ F</button><br />
+    <button onclick="convertMtoFt()">Bài 2: Chuyển từ mét sang feet</button
+    ><br />
+    <button onclick="countAreaSquare()">
+      Bài 3: Tính diện tích hình vuông khi biết cạnh a.</button
+    ><br />
+    <button onclick="countAreaRectangle()">
+      Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</button
+    ><br />
+    <button onclick="countAreaTriangle()">
+      Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</button
+    ><br />
+    <button onclick="giaiPtb1()">Bài 6: Giải phương trình bậc 1.</button><br />
+    <button onclick="giaiPtb2()">Bài 7: Giải phương trình bậc 2.</button><br />
+    <button onclick="checkAge()">
+      Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.
+      Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</button
+    ><br/>
+    <button onclick="checkTriangle()">
+      Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam
+      giác. Điều kiện để a,b,c là cạnh của một tam giác là:</button
+    ><br/>
+    <button onclick="countElectric()">Bài 10: Viết chương trình tính giá điện.</button><br />
+    <button onclick="countTax()">Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</button><br />
+    <button onclick="countTaxBank()">Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</button><br />
+  </body>
+  <script>
+    // Bài 1: Chuyển từ độ C sang độ F.
+    function myFunctionCtoF() {
+      let C = +prompt("Nhập một số để chuyển từ độ C sang độ F:");
+      let F = 0;
+      if (C > 0) {
+        F = (C * 9) / 5 + 32;
+        alert(C + " độ C bằng " + F + " độ F ");
+      }
+    }
+    // °C  x  9/5 + 32 = °F
+    // Bài 2: Chuyển từ mét sang feet:
+    function convertMtoFt() {
+      let numberM = +prompt("Nhập số cần chuyển từ Mét sang Feet");
+      let numberFt = 0;
+      if (numberM > 0) {
+        numberFt = numberM * 3.2808;
+        alert(numberM + " mét bằng " + numberFt + " feet");
+      }
+    }
+    // ft =m * 3.2808
+    // Bài 3: Tính diện tích hình vuông khi biết cạnh a.
+    function countAreaSquare() {
+      let lengthA = +prompt("Nhập vào chiều dài cạnh a");
+      let countSquare = 0;
+      if (lenghtA > 0) {
+        countSquare = lengthA * lengthA;
+        alert("Diện tích hình vuông có cạnh " + lengthA + " là " + countSquare);
+      }
+    }
+    // Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+    function countAreaRectangle() {
+      let lengthA = +prompt("Nhập vào chiều dài cạnh a");
+      let lengthB = +prompt("Nhập vào chiều dài cạnh b");
+      let countRectangle = 0;
+      if (lengthA > 0 && lengthB > 0) {
+        countRectangle = lengthA * lengthB;
+        alert(
+          `Diện tích hình chữ nhật có chiều dài 2 cạnh: ${lengthA} và ${lengthB} là: ${countRectangle}`
+        );
+      }
+    }
+    // Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+    function countAreaTriangle() {
+      let lengthA = +prompt("Nhập vào chiều dài cạnh a");
+      let lengthB = +prompt("Nhập vào chiều dài cạnh b");
+      let countTriangle = 0;
+      if (lengthA > 0 && lengthB > 0) {
+        countTriangle = 0.5 * (lengthA * lengthB0);
+        alert(
+          `Diện tích tam giác vuông có độ dài 2 cạnh ${lengthA} và ${lengthB} là : ${countTriangle}`
+        );
+      }
+    }
+    // Bài 6: Giải phương trình bậc 1.
+    function giaiPtb1() {
+      let numberA = +prompt("Nhập vào số  a khác 0");
+      let numberB = +prompt("Nhập vào số b");
+      let result = 0;
+      if (numberA === 0) {
+        alert("Phương trình vô nghiệm");
+      } else if (numberB === 0) {
+        result = 0;
+        alert(`Phương trình có nghiệm là ${result}`);
+      } else if (numberB != 0) {
+        result = -(numberB / numberA);
+        alert(`Phương trình có nghiệm là ${result}`);
+      }
+    }
+    // Bài 7: Giải phương trình bậc 2.
+    function giaiPtb2() {
+      let numberA = +prompt("Nhập vào số  a ");
+      let numberB = +prompt("Nhập vào số  b ");
+      let numberC = +prompt("Nhập vào số  c ");
+      let result_1 = 0;
+      let result_2 = 0;
+      let result = 0;
+
+      let delta = numberB * numberB - 4 * numberA * numberC;
+      if (numberA === 0 && numberB === 0) {
+        alert("Phương trình có vô số nghiệm");
+      } else if (numberA === 0 && numberB !== 0) {
+        result = -(numberC / numberB);
+        alert(`Phương trình có nghiệm như phương trình bậc nhất là ${result}`);
+      } else if (delta < 0) {
+        alert("Phương trình vô nghiệm");
+      } else if (delta === 0) {
+        result = result_2 = -(numberB / (2 * numberA));
+        alert(`Phương trình có nghiệm kép là: ${result}`);
+      } else if (delta > 0) {
+        result_1 = (-numberB + Math.sqrt(delta)) / (2 * numberA);
+        result_2 = (-numberB - Math.sqrt(delta)) / (2 * numberA);
+        alert(
+          `Phương trình có 2 nghiệm phân biệt là: ${result_1} và ${result_2}`
+        );
+      }
+    }
+    // Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+    function checkAge() {
+      let age = +prompt("Nhập tuổi của bạn");
+      if (age > 0 && age < 120) {
+        alert(`${age} là tuổi của bạn`);
+      } else {
+        alert("Bạn phải nhập số lơn hơn 0 và nhỏ hơn 120");
+      }
+    }
+    // Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:
+    // a,b,c > 0
+    // a + b > c
+    // b + c > a
+    // a + c > b
+    function checkTriangle(){
+        let numberA = +prompt("Nhập vào số  a ");
+        let numberB = +prompt("Nhập vào số  b ");
+        let numberC = +prompt("Nhập vào số  c ");
+        if(numberA > 0 && numberB > 0 && numberC > 0 && (numberA + numberB) > numberC && (numberB + numberC) > numberA && (numberA + numberC) > numberB){
+            alert(`Ba số ${numberA}, ${numberB}, ${numberC} là ba cạnh của một tam giác`);
+        } else {
+            alert(`Ba số ${numberA}, ${numberB}, ${numberC} không phải là cạnh của 1 tam giác`)
+        }
+    }
+    // Bài 10: Viết chương trình tính giá điện.
+    function countElectric(){
+        let soDienDauKy = +prompt("Mời bạn nhập số điện đầu kỳ thanh toán");
+        while (isNaN(soDienDauKy) || soDienDauKy <= 0){
+            soDienDauKy = +prompt("so Dien Dau Ky phải là một số hoặc là một số lớn hơn 0")
+            };
+        let soDienCuoiKy = +prompt("Mời bạn nhập số điện Cuối kỳ thanh toán");
+        while (isNaN(soDienCuoiKy) || soDienCuoiKy <= 0){
+            soDienCuoiKy = +prompt("so Dien Cuoi Ky phải là một số hoặc là một số lớn hơn 0")
+                };
+        let soTienPhaiTra = 0;
+       
+        if (soDienDauKy > 0 && soDienCuoiKy > 0 && soDienCuoiKy > soDienDauKy && soDienDauKy != soDienCuoiKy){
+            let soDienTieuThu = soDienCuoiKy - soDienDauKy;
+            let soDienTieuThuBac1 = 0;
+            let soDienTieuThuBac2 = 0;
+            let soDienTieuThuBac3 = 0;
+            if(soDienTieuThu <= 50 ){
+                soDienTieuThuBac1 = soDienTieuThu;
+                soTienPhaiTra = soDienTieuThuBac1 * 3500;
+            alert(`Số kg điện bạn đã tiêu thụ là ${soDienTieuThu} và thuộc bậc 1. Vậy bạn phải trả ${soTienPhaiTra} VND`);
+            } else if( soDienTieuThu <= 150){
+                soDienTieuThuBac1 = 50;
+                soDienTieuThuBac2 = soDienTieuThu - 50;
+                soTienPhaiTra = ((soDienTieuThuBac2) * 2000) + ((soDienTieuThuBac1) * 3500);
+                alert(`Số kg điện bậc 1 bạn đã dùng là: ${soDienTieuThuBac1} và số kg điện bậc 2 bạn đã dùng 
+                là ${soDienTieuThuBac2}. Vậy bạn phải thanh toán số tiền là ${soTienPhaiTra}`)
+            } else {
+                soDienTieuThuBac1 = 50;
+                soDienTieuThuBac2 = 150;
+                soDienTieuThuBac3 = soDienTieuThu - 200;
+                soDienTieuThu = soDienTieuThuBac1 + soDienTieuThuBac2 + soDienTieuThuBac3;
+                soTienPhaiTra = (soDienTieuThuBac3 * 1500) +(soDienTieuThuBac2 * 2000) + (soDienTieuThuBac1 * 3500);
+                alert(`Số kg điện bậc 1 bạn đã dùng là: ${soDienTieuThuBac1} , số kg điện bậc 2 bạn đã dùng là ${soDienTieuThuBac2}, số kg điện bậc 3 bạn đã dùng là ${soDienTieuThuBac3}. Vậy bạn phải thanh toán số tiền là ${soTienPhaiTra} cho ${soDienTieuThu} kg điện đã dùng`)
+            }
+        } else if (soDienCuoiKy < soDienDauKy){
+            alert("Đồng hồ công tơ bị sai. Mời bạn liên hệ với điện lực");
+        }
+        else if (soDienCuoiKy === soDienDauKy){
+            alert("Tháng này bạn không tiêu thụ điện nên không phải thanh toán tiền");
+        }
+    }
+
+    // Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+    function countTax(){
+        let countTax = 0;
+        let salary = +prompt("Nhập mức lương hiện tại của bạn");
+        while (isNaN(salary) || salary <= 0 || !Number.isInteger(salary)){
+            salary = +prompt("Vui lòng nhập mức lương hiện tại của bạn, phải là một số lớn hơn 0");
+        }
+        if (salary <= 11000000) {
+          alert("Bạn không thuộc đối tượng phải tính thuế thu nhập cá nhân")
+        } else if (salary > 11000000){
+          let soNguoiPhuThuoc = +prompt("Nhập số người phụ thuộc: ")
+          while (isNaN(soNguoiPhuThuoc) || soNguoiPhuThuoc <= 0 || !Number.isInteger(soNguoiPhuThuoc)){
+            soNguoiPhuThuoc = +prompt("Bạn phải nhập 1 số nguyên như 1, 2, 3 , 4....");
+          }
+          countTax = ((salary - (soNguoiPhuThuoc * 4400000)) - 11000000) * (10/100);
+          alert(`Bạn phải nộp ${countTax} VND cho mức lương ${salary}`)
+        }
+        
+    }
+    // Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+    function countTaxBank() {
+      let soTienVayBanDau = +prompt("Nhập số tiền vay ban đầu")
+      while (isNaN(soTienVayBanDau) || soTienVayBanDau <= 0 || !Number.isInteger(soTienVayBanDau)){
+        soTienVayBanDau = +prompt("Bạn phải nhập số tiền vay lớn hơn 0");
+      }
+      let soThangVay = +prompt("Nhập số tháng mà bạn vay");
+      while (isNaN(soThangVay) || soThangVay <= 0 || !Number.isInteger(soThangVay)){
+        soThangVay = +prompt("Bạn phải nhập số tháng vay là một số lớn hơn 0");
+      }
+      let laiXuat = +prompt("Nhập lãi xuất hàng tháng");
+      while (isNaN(laiXuat) || laiXuat <=0){
+        laiXuat = +prompt("Bạn phải nhập lãi xuất là một số lớn hơn 0");
+      }
+      laiXuat = laiXuat / 100
+
+      if (soTienVayBanDau > 0 && soThangVay > 0 && laiXuat > 0){
+        let soTienPhaiTra = 0;
+        let chuKyTinhLai = 0;
+        soTienPhaiTra = soTienVayBanDau * Math.pow((1 + laiXuat),soThangVay);
+        alert(`Số tiền bạn phải trả cho khoản vay ${soTienVayBanDau} VND trong ${soThangVay} tháng với lãi xuất ${laiXuat}% là: ${Math.floor(soTienPhaiTra)}`);
+      }
+    }
+  </script>
+  
+</html>

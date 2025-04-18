@@ -1,0 +1,10 @@
+SCMs là hệ thống quản lý mã nguồn
+	phối hợp giữa các thành viên giúp làm việc đồng thời trên các tệp tin
+	theo dõi được tình trạng sửa lỗi và thực thi mã nguồn
+	quản lý tệp tin và kiểm soát phiên bản
+VCS Là hệ thống quản lý phiên bản
+	Khôi phục lại phiên bản cũ của file và dự án
+	Xem lại ai là người thay đổi và thay đổi những gì, có phát sinh sự cố
+	hay không
+	Khôi phục lại cả file bị xóa
+Các phần mềm: Git, subversion

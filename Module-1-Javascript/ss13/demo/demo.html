@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num"><button onclick="isPrime()">check</button>
+<button id="show" onclick="show()">show</button>
+</body>
+<script>
+  function isPrime() {
+    let isPrime = true;
+    let num = +document.getElementById("num").value;
+    for (let i = 2; i<= Math.sqrt(num); i++){
+      if (num % i === 0){
+        isPrime = false;
+        break;
+      }
+    }
+    if(isPrime) {
+      alert(num + "la 1 so nguyen so")
+      console.log(num);
+    } else {
+      alert(num + "khong phai la so nguyen to")
+    }
+
+  }
+
+  function show() {
+    let array = [];
+    let count = 0;
+    let number = 2;
+    while (count < 10) { // Lặp cho đến khi tìm được 10 số nguyên tố
+      if (isPrime(number)) {
+        array.push(number); // In ra số nguyên tố
+        count++; // Tăng biến đếm
+      }
+      number++; // Kiểm tra số tiếp theo
+    }
+    console.log(array)
+  }
+  function isPrime(num){
+    for (let i = 2; i<= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+</script>
+</html>

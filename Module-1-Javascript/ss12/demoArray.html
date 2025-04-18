@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+
+</body>
+<!--<script>-->
+<!--//Cách 1 khai bao mảng-->
+<!--//-->
+<!--    let arr = [1,2,"Trong",true,undefined,null];-->
+<!--    console.log(Array.isArray(arr));-->
+<!--    console.log(arr);-->
+<!--    // đưa arr.length ra ngoài để tối ưu hiệu suất code-->
+<!--    // for(let i = arr.length - 1; i >=0; i++) Duyệt ngược mảng-->
+<!--    for(let i = 1; i < arr.length; i++) {-->
+<!--        document.write(`Phần tử thứ ${i} là ${arr[i]} <br>`)-->
+<!--    }-->
+<!--    console.log(arr[2])-->
+<!--//Cách 2 khai báo mảng-->
+<!--let arr2 = new Array(1,"2");-->
+<!--console.log(arr2)-->
+<!--// for - in và for - of-->
+<!--</script>-->
+
+
+
+<!--<script>-->
+<!--    let arr = [];-->
+<!--    let input;-->
+<!--    while(true){-->
+<!--        input = prompt("Nhập số mà giáo sư muốn kiểm tra.Nếu nhập xong vui lòng nhập Done.");-->
+<!--        if(input.toLowerCase() === "Done" || input === "done"){-->
+<!--            break;-->
+<!--        } else {-->
+<!--            if (isNaN(input)){-->
+<!--                alert("Giáo sư nhập sai, không tính");-->
+<!--                continue;-->
+<!--            }-->
+<!--            arr.push(+input);-->
+<!--        }-->
+<!--    }-->
+<!--    document.write(arr);-->
+<!--</script>-->
+
+
+<script>
+    let arr = ["Haitt", "Trong", "Hang","Anh","Kien","Tai"];
+    let arr2 =[1,2,476,64890,8,3,5,45,324,98];
+// chọn chèn và nổi bọt.
+    arr2.sort(function (a,b){
+        return a - b;
+    })
+    document.write(arr2);
+    arr.sort();
+    document.write(arr);
+
+</script>
+</html>

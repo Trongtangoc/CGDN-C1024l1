@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .tableLeft {
+        width: 50%;
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+</style>
+<body>
+
+
+<!--    <button onclick="bai3(4)">Viết chương trình tính :-->
+<!--        S=1+1/2+1/3+....+1/n-->
+<!--    </button>-->
+<!--    <br>-->
+<!--    <button onclick="bai4(3)"> Viết chương trình tính :-->
+<!--        S=15-1+1/2-1/3!+....+(-1)n 1/n!-->
+<!--    </button>-->
+<!--    <br>-->
+<!--    <button> Viết chương trình tính :-->
+<!--        S=1+1/3!+1/5!+…..+1/(2n-1)!-->
+<!--    </button>-->
+<!--    <br>-->
+<!--    <button> Tính n!! = 1*3*5*…..*n(n lẽ)-->
+<!--        = 2*4*6*….*n(n chẵn)-->
+<!--    </button>-->
+<!--    <br>-->
+<!--    <button>Tính tổng và tích các chữ số của một số nguyên dương m cho trước-->
+<!--        (Ví dụ : m=234=> S=2+3+4=9, P=2*3*4=24)-->
+<!--    </button>-->
+<!--    <br>-->
+<!--    <button>Nhập 2 số nguyên dương a và b. Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất của 2 số nguyên dương a-->
+<!--        và b-->
+<!--        đó.-->
+<!--    </button>-->
+<!--    <br>-->
+<!--    <button> Nhập vào một chuỗi ký tự thực hiện công việc sau:-->
+<!--        In ra chuỗi đảo ngược của chuỗi đã cho-->
+<!--        Đổi chuổi đã cho sang chữ hoa-->
+<!--        Đổi chuỗi đã cho sang chữ thường-->
+<!--        Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường (các ký tự chữ hoa thì thành chữ thường và ngược lại)-->
+<!--    </button>-->
+<!--    <br>-->
+<!--    <button>Nhập một chuổi ký tự tuỳ ý, sau đó thực hiện công việc sau:-->
+<!--        a. In mỗi từ trên mỗi dòng-->
+<!--        b. Đếm số từ có trong chuổi đã cho.-->
+<!--        b. Đưa ra bảng tần số xuất hiện của các từ.-->
+<!--    </button>-->
+<!--    <br>-->
+<!--</p>-->
+
+<div id="result"></div>
+<button onclick="bai1(4)">Bai 1: Viết chương trình in ra các dấu * theo cấu trúc như sau (cho n là chiều cao của tháp,
+    cần in ra n dòng):
+    *****
+    *****
+    *****
+    *****
+    *****
+    *****
+</button>
+<br>
+<button onclick="bai2()">Bai 2.Nhập vào tháng, năm bất kỳ. In ra số ngày tương ứng với tháng, năm đó.</button>
+<br>
+<button onclick="bai3(4)">Bai 3. Viết chương trình tính :
+    S=1+1/2+1/3+....+1/n
+</button>
+<br>
+<button onclick="bai4(4)">Bai 4 Viết chương trình tính :
+    S=15-1+1/2-1/3!+....+(-1)n 1/n!
+</button>
+<br>
+<button onclick="oddFactorialSeries(2)">Bai 5 Viết chương trình tính :
+    S=1+1/3!+1/5!+…..+1/(2n-1)!
+</button>
+<br>
+<button onclick="doubleFactorial(2)">Bai 6 Tính n!! = 1*3*5*…..*n(n lẽ)
+    = 2*4*6*….*n(n chẵn)
+</button>
+<br>
+<button onclick="sumAndProductOfDigits(5)">Bai 7 Tính tổng và tích các chữ số của một số nguyên dương m cho trước
+    (Ví dụ : m=234=> S=2+3+4=9, P=2*3*4=24)
+</button>
+<br>
+<button onclick="lcm(2,3)">Bai 8 Nhập 2 số nguyên dương a và b. Sau đó in ra ước chung lớn nhất và
+    bội chung nhỏ nhất của 2 số nguyên dương
+    a   và b    đó.
+</button>
+<br>
+<button>Bai 9 Nhập vào một chuỗi ký tự thực hiện công việc sau:
+    In ra chuỗi đảo ngược của chuỗi đã cho
+    Đổi chuổi đã cho sang chữ hoa
+    Đổi chuỗi đã cho sang chữ thường
+    Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường (các ký tự chữ hoa thì thành chữ thường và ngược lại)
+</button>
+<br>
+<button>Bai 10 Nhập một chuổi ký tự tuỳ ý, sau đó thực hiện công việc sau:
+    a. In mỗi từ trên mỗi dòng
+    b. Đếm số từ có trong chuổi đã cho.
+    b. Đưa ra bảng tần số xuất hiện của các từ.
+</button>
+<br>
+<button>Bai 11 Viết chương trình thực hiện các công việc như sau :
+    Nhập một mảng a gồm n phần tử kiểu nguyên int
+    Tính tổng số dương lẻ mảng a
+    Nhập phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra phần tử ở vị trí đầu tiên
+    Sắp sếp mảng a theo thứ tự tăng dần..
+    Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a.
+</button>
+<br>
+<button>Bai 12 Viết chương trình thực hiện công việc sau:
+    Nhập ma trận a (m dòng, n cột) gồm các phần tử kiểu int
+    Tính tích các số là bội số của 3 nằm trên dòng đầu tiên của ma trận a.
+    Tạo ra mảng một chiều X[i] với X[i] là các giá trị lớn nhất trên dòng i của ma trận a
+    Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i].
+</button>
+
+
+</body>
+
+<script>
+    function bai1(n) {
+        for (let i = 0; i < n; i++) {
+            let stars = "";
+            for (let j = 0; j < n; j++) {
+                stars += "*";
+
+            }
+            console.log(stars)
+        }
+    }
+
+    bai1(4);
+
+    function bai2() {
+        let month = +prompt("Nhập vào tháng");
+        while (month < 1 || month > 12) {
+            month = +prompt("Vui Lòng Nhập lại tháng");
+        }
+        let year = +prompt("Nhập vào năm");
+        while (year < 2 || year > 1000000) {
+            year = +prompt("Vui Lòng Nhập lại năm");
+        }
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                alert(`Tháng ${month} có 31 ngày`);
+                break;
+            case 2:
+                alert(`tháng ${month} có 28 hoặc 29 ngày`);
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert(`Tháng ${month} có 30 ngày`);
+                break;
+        }
+    }
+
+    function bai3(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            sum = sum + (1 / i);
+        }
+        console.log(sum)
+    }
+
+
+    function factorial(n) {
+        let factorial = 1;
+        for (let i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    //S=15-1+1/2-1/3!+....+(-1)n 1/n!
+    function bai4(n) {
+        let S = 15;
+        for (let i = 1; i <= n; i++) {
+            if (i % 2 === 0) {
+                S += 1 / factorial(i);  // Dấu dương nếu i chẵn
+            } else {
+                S -= 1 / factorial(i);  // Dấu âm nếu i lẻ
+            }
+
+        }
+        console.log(S)
+        return S;
+
+    }
+
+    // Tính S = 1 + 1/3! + 1/5! + … + 1/(2n-1)!
+    function oddFactorialSeries(n) {
+        let S = 1;
+        for (let i = 1; i <= n; i++) {
+            S += 1 / factorial(2 * i - 1);
+        }
+        console.log(S)
+        return S;
+    }
+
+    // Tính n!! (giai thừa kép)
+    function doubleFactorial(n) {
+        let result = 1;
+        for (let i = n; i > 0; i -= 2) {
+            result *= i;
+        }
+        console.log(result)
+        return result;
+    }
+
+    // Tính tổng và tích các chữ số của một số nguyên dương m cho trước
+    function sumAndProductOfDigits(m) {
+        let sum = 0;
+        let product = 1;
+        while (m > 0) {
+            let digit = m % 10;
+            sum += digit;
+            product *= digit;
+            m = Math.floor(m / 10);
+        }
+        console.log(`sum: ${sum} and product ${product}`)
+        return {sum: sum, product: product};
+    }
+    // Nhập 2 số nguyên dương a và b. Tìm ước chung lớn nhất và bội chung nhỏ nhất
+
+    function gcd(a, b) {
+        while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    function lcm(a, b) {
+        return (a * b) / gcd(a, b);
+    }
+
+    // Nhập 2 số nguyên dương
+    let a = 12; // Ví dụ giá trị của a
+    let b = 18; // Ví dụ giá trị của b
+
+    console.log("Ước chung lớn nhất của", a, "và", b, "là:", gcd(a, b));
+    console.log("Bội chung nhỏ nhất của", a, "và", b, "là:", lcm(a, b));
+
+    // Nhập vào chuỗi ký tự, thực hiện các công việc
+    function reverseString(str) {
+        let reversed = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+            reversed += str[i];
+        }
+        return reversed;
+    }
+
+    console.log("reverseString", reverseString("VAvC"))
+    function toUpperCase(str) {
+        let upperStr = "";
+        for (let i = 0; i < str.length; i++) {
+            let charCode = str.charCodeAt(i);
+            if (charCode >= 97 && charCode <= 122) {
+                upperStr += String.fromCharCode(charCode - 32);
+            } else {
+                upperStr += str[i];
+            }
+        }
+        return upperStr;
+    }
+
+    function toLowerCase(str) {
+        let lowerStr = "";
+        for (let i = 0; i < str.length; i++) {
+            let charCode = str.charCodeAt(i);
+            if (charCode >= 65 && charCode <= 90) {
+                lowerStr += String.fromCharCode(charCode + 32);
+            } else {
+                lowerStr += str[i];
+            }
+        }
+        return lowerStr;
+    }
+
+    function toggleCase(str) {
+        let toggledStr = "";
+        for (let i = 0; i < str.length; i++) {
+            let charCode = str.charCodeAt(i);
+            if (charCode >= 65 && charCode <= 90) {
+                toggledStr += String.fromCharCode(charCode + 32);
+            } else if (charCode >= 97 && charCode <= 122) {
+                toggledStr += String.fromCharCode(charCode - 32);
+            } else {
+                toggledStr += str[i];
+            }
+        }
+        return toggledStr;
+    }
+
+    // Nhập chuỗi và thực hiện các công việc
+    function printWords(str) {
+        let word = "";
+        for (let i = 0; i <= str.length; i++) {
+            if (str[i] === " " || i === str.length) {
+                console.log(word);
+                word = "";
+            } else {
+                word += str[i];
+            }
+        }
+    }
+
+    function countWords(str) {
+        let count = 0;
+        let word = "";
+        for (let i = 0; i <= str.length; i++) {
+            if (str[i] === " " || i === str.length) {
+                if (word !== "") {
+                    count++;
+                    word = "";
+                }
+            } else {
+                word += str[i];
+            }
+        }
+        return count;
+    }
+
+    function wordFrequency(str) {
+        let frequency = {};
+        let word = "";
+        for (let i = 0; i <= str.length; i++) {
+            if (str[i] === " " || i === str.length) {
+                if (word !== "") {
+                    if (!frequency[word]) {
+                        frequency[word] = 1;
+                    } else {
+                        frequency[word]++;
+                    }
+                    word = "";
+                }
+            } else {
+                word += str[i];
+            }
+        }
+        return frequency;
+    }
+
+    // Nhập mảng a gồm n phần tử kiểu int
+    function sumOddPositiveNumbers(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 0 && arr[i] % 2 !== 0) {
+                sum += arr[i];
+            }
+        }
+        return sum;
+    }
+
+    function findElementIndex(arr, k) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === k) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function sortArray(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    function insertElement(arr, p) {
+        arr.push(p);
+        sortArray(arr);
+        return arr;
+    }
+
+    // Nhập ma trận a (m dòng, n cột) gồm các phần tử kiểu int
+    function productOfMultiplesOfThree(matrix) {
+        let product = 1;
+        for (let i = 0; i < matrix[0].length; i++) {
+            if (matrix[0][i] % 3 === 0) {
+                product *= matrix[0][i];
+            }
+        }
+        return product;
+    }
+
+    function maxInEachRow(matrix) {
+        let X = [];
+        for (let i = 0; i < matrix.length; i++) {
+            let max = matrix[i][0];
+            for (let j = 1; j < matrix[i].length; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                }
+            }
+            X.push(max);
+        }
+        return X;
+    }
+
+    function removeFirstElement(arr) {
+        let newArr = [];
+        for (let i = 1; i < arr.length; i++) {
+            newArr.push(arr[i]);
+        }
+        return newArr;
+    }
+
+</script>
+</html>

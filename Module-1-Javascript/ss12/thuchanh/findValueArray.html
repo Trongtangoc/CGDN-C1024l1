@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+
+<body>
+    <button onclick="findValueArray()">Tìm giá trị trong mảng</button>
+    <p id="showResult"></p>
+</body>
+<script>
+    function findValueArray() {
+        let value = +prompt("Nhập một giá trị cần tìm :");
+        let array = [1, 2, 4, 6, 2, 4, 8, 63, 333, 565, 21, 546, 6, 5, 324, 654, 21, 54, 435, 345];
+        let arrayLength = array.length;
+        let i = 0;
+        for (i; i < arrayLength; i++) {
+            if (array[i] == value) {
+                console.log(value);
+
+                document.getElementById("showResult").innerHTML = `Giá trị ${value} đã tồn tại trong mảng tại vị trí ${i}`
+            } else {
+                adocument.getElementById("showResult").innerHTML = `Giá trị ${value} không tồn tại trong mảng`
+            };
+        }
+
+    }
+</script>
+
+</html>

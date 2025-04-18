@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loop 2</title>
+</head>
+
+<body>
+    <button onclick="printFibonaci()">Bài 1: Nhấn để in dãy Fibonaci</button>
+    <p id="result"></p>
+    <button onclick="bai2GiaiThua()">Bài 2: Tính giai thừa của một số nguyên dương</button>
+    <p id="resultGiaiThua"></p>
+    <button onclick="bai3PrintTriger()">Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</button>
+    <p id="resultTamGiac"></p>
+    <button onclick="bai4PrintChuNhat()">Bài 4: In hình chữ nhật</button>
+    <p id="resultHinhChuNhat"></p>
+    <button onclick="bai5CountTax()">Bài 5: Viết chương trình tính lãi ngân hàng </button>
+    <button onclick="bai6PrintHeart()">Bài 6: In hình trái tim</button>
+</body>
+<script>
+    function printFibonaci() {
+        let count = 0;
+        let num1 = 0;
+        let num2 = 1;
+        let soFibonacci = 0;
+        let daySoFibonaci = [];
+        let i = 0;
+        while (count < 20) {
+            for (i; i <= 20; i++) {
+                soFibonacci = num1 + num2;
+                daySoFibonaci.push(soFibonacci)
+                num1 = num2;
+                num2 = soFibonacci;
+                count++;
+            }
+            document.getElementById("result").innerHTML = `Dãy 20 số Fibonaci là: ${daySoFibonaci}`;
+        }
+
+    }
+    function bai2GiaiThua() {
+        let soNguyen = +prompt("Nhập vào số nguyên dương cần tính giai thừa");
+        let result = 1;
+        while (isNaN(soNguyen) || soNguyen < 0) {
+            soNguyen = +prompt("Bạn phải nhập đúng số nguyên dương là số lơn hơn 0");
+        }
+        if (soNguyen == 0 || soNguyen == 1) {
+            console.log(result);
+            document.getElementById("resultGiaiThua").innerHTML = `${soNguyen}! bằng  ${result} `
+        } else {
+            for (let i = 1; i <= soNguyen; i++) {
+                result = result * i;
+            }
+            document.getElementById("resultGiaiThua").innerHTML = `${soNguyen}! bằng  ${result} `
+        }
+    }
+    function bai3PrintTriger() {
+        let line = "";
+        let star = "*"
+
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                line += star;
+            }
+            line += "<br>";
+        }
+
+        for (let i = 5; i >= 1; i--) {
+            for (let j = 1; j <= i; j++) {
+                line += star;
+            }
+            line += "<br>";
+        }
+
+
+        // In nửa dưới của hình (tăng dần)
+        // Vẽ nửa trên của hình
+        for (let i = 1; i <= 5; i++) {
+            // Thêm khoảng trống bên trái
+            for (let j = 1; j <= 5 - i; j++) {
+                line += "&nbsp; ";
+            }
+            for (let k = 1; k <= i; k++) {
+                line += star;
+            }
+            line += "<br>";
+        }
+
+
+
+        // Vẽ nửa dưới của hình
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i - 1; j++) {
+                line += "&nbsp; ";
+            }
+            // Thêm khoảng trống bên trái
+            for (let k = 5; k >= i; k--) {
+                line += star;
+            }
+            line += "<br>";
+        }
+
+
+        document.getElementById("resultTamGiac").innerHTML = line;
+    }
+
+    function bai4PrintChuNhat() {
+        let star = "*";
+        let line = "";
+        // Vẽ hàng trên cùng của hình chữ nhật
+        for (let i = 1; i <= 23; i++) {
+            line += star + "&nbsp;";
+        }
+        line += "<br>"; // Xuống dòng sau hàng trên cùng
+        // Vẽ các hàng giữa của hình chữ nhật
+        for (let i = 1; i <= 6; i++) {
+            line += star; // In dấu sao đầu tiên của hàng
+
+            // In khoảng trống giữa
+            for (let j = 1; j <= 32; j++) {
+                line += "&nbsp;&nbsp;";
+            }
+            line += star + "<br>"; // In dấu sao cuối cùng và xuống dòng
+        }
+        // Vẽ hàng dưới cùng của hình chữ nhật
+        for (let i = 1; i <= 23; i++) {
+            line += star + "&nbsp;";
+        }
+        line += "<br>"; // Xuống dòng sau hàng dưới cùng    
+        document.getElementById("resultHinhChuNhat").innerHTML = line;
+    }
+    function bai5CountTax() {
+
+
+        let soTienVayBanDau = +prompt("Nhập số tiền vay ban đầu")
+        while (isNaN(soTienVayBanDau) || soTienVayBanDau <= 0 || !Number.isInteger(soTienVayBanDau)) {
+            soTienVayBanDau = +prompt("Bạn phải nhập số tiền vay lớn hơn 0");
+        }
+        let soThangVay = +prompt("Nhập số tháng mà bạn vay");
+        while (isNaN(soThangVay) || soThangVay <= 0 || !Number.isInteger(soThangVay)) {
+            soThangVay = +prompt("Bạn phải nhập số tháng vay là một số lớn hơn 0");
+        }
+        let laiXuat = +prompt("Nhập lãi xuất hàng tháng");
+        while (isNaN(laiXuat) || laiXuat <= 0) {
+            laiXuat = +prompt("Bạn phải nhập lãi xuất là một số lớn hơn 0");
+        }
+        laiXuat = laiXuat / 100
+
+        if (soTienVayBanDau > 0 && soThangVay > 0 && laiXuat > 0) {
+            let soTienPhaiTra = 0;
+            let chuKyTinhLai = 0;
+            soTienPhaiTra = soTienVayBanDau * Math.pow((1 + laiXuat), soThangVay);
+            alert(`Số tiền bạn phải trả cho khoản vay ${soTienVayBanDau} VND trong ${soThangVay} tháng với lãi xuất ${laiXuat}% là: ${Math.floor(soTienPhaiTra)}`);
+        }
+    }
+    function bai6PrintHeart() {
+
+
+    }
+</script>
+
+</html>

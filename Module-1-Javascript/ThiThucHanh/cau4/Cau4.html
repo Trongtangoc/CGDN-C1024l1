@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        
+        tr {
+            border: 1px solid black;
+            height: 50px
+        }
+        
+        td, th {
+            border: 1px solid black;
+            text-align: center;
+            width: 200px;
+        }
+        
+        tr:nth-child(old) {
+            background-color: gray;
+        }
+        
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 3px
+        }
+       
+       
+    </style>
+</head>
+<body>
+<div class="input">
+    <label for="ids">Số thứ tự: </label>
+    <input type="number" id="ids" placeholder="Nhập số thứ tự">
+    <br>
+    <label for="name">Tên Khách Hàng: </label>
+    <input type="text" id="name" placeholder="Nhập Tên Khách Hàng"><br>
+    
+    <label for="phone">Số điện thoại Khách Hàng</label>
+    <input type="number" id="phone" placeholder="Nhập Số điện thoại Khách Hàng"><br>
+    
+    <label for="address">Địa chỉ Khách Hàng</label>
+    <input type="text" placeholder="Nhập Địa chỉ Khách Hàng" id="address"><br>
+    
+    <label for="email">Email Khách Hàng</label>
+    <input type="text" placeholder="Nhập Email Khách Hàng" id="email"><br>
+    
+    
+    <button id="add">Thêm mới</button>
+</div>
+<div>
+    <p id="result"></p>
+</div>
+
+</body>
+<script>class Customer {
+    id;
+    name;
+    phone;
+    address;
+    email;
+    
+    constructor(id, name, phone, address, email) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+    }
+}
+
+function display(customers) {
+    let result = "<table>";
+    result += `<tr>
+                    <th>STT</th>
+                    <th>Tên Khách Hàng</th>
+                    <th>Số điện thoại Khách Hàng</th>
+                    <th>Địa chỉ Khách Hàng</th>
+                    <th>Email Khách Hàng</th>
+                </tr>`;
+    for ( let i = 0; i < customers.length; i++ ) {
+        result += "<tr>";
+        result += `<td>${customers[i].id}</td>`;
+        result += `<td>${customers[i].name}</td>`;
+        result += `<td>${customers[i].phone}</td>`;
+        result += `<td>${customers[i].address}</td>`;
+        result += `<td>${customers[i].email}</td>`;
+        
+        result += "</tr>";
+    }
+    result += "</table>";
+    document.getElementById("result").innerHTML = result;
+}
+
+document.getElementById("add").addEventListener("click", function () {
+    let customerAddId = parseInt(document.getElementById("ids").value);
+    let customerAddName = document.getElementById("name").value;
+    let customerAddPhone = document.getElementById("phone").value;
+    let customerAddAddress = document.getElementById("address").value;
+    let customerAddEmail = document.getElementById("email").value;
+    let customer = [];
+    if ( !isNaN(customerAddId) && customerAddId > 0 && customerAddId < 10000000000 ) {
+        customer.id = customerAddId;
+    } else {
+        alert("Số thứ tự phải là một số lớn hơn 0 và nhỏ hơn 10000000000");
+        document.getElementById("ids").focus();
+        return;
+    }
+    if ( customerAddName.length > 5 && customerAddName.length < 100 ) {
+        customer.name = customerAddName;
+    } else {
+        alert("Tên Khách hàng phải đủ 5 ký tự và nhỏ hơn 100 ký tự");
+        document.getElementById("name").focus();
+        return;
+    }
+    if ( /^\d{10}$/.test(customerAddPhone) ) {
+        customer.phone = customerAddPhone;
+    } else {
+        alert("Số điện thoại Khách hàng không hợp lệ. Số điện thoại phải gồm 10 số");
+        document.getElementById("phone").focus();
+        return;
+    }
+    
+    if ( customerAddAddress.length > 5 && customerAddAddress.length < 100 ) {
+        customer.address = customerAddAddress;
+    } else {
+        alert("Địa chỉ Khách hàng phải đủ 5 ký tự và nhỏ hơn 100 ký tự");
+        document.getElementById("address").focus();
+        return;
+    }
+    if ( /^[a-zA-Z0-9._%+-]+@[a-zA-Z]/.test(customerAddEmail) ) {
+        customer.email = customerAddEmail;
+    } else {
+        alert("Email Khách hàng phải gồm có @ example: example@email.com");
+        document.getElementById("email").focus();
+        return;
+    }
+    customers.push(customer);
+    display(customers);
+    
+});
+
+let customers = [];
+customers.push(new Customer(1, "Tạ Ngọc Trọng1", "0973123456", "Việt Nam", "trong1@gmail.com"));
+customers.push(new Customer(2, "Tạ Ngọc Trọng2", "0973123789", "Việt Nam", "trong10@gmail.com"));
+customers.push(new Customer(3, "Tạ Ngọc Trọng3", "0973123234", "Việt Nam", "trong20@gmail.com"));
+customers.push(new Customer(4, "Tạ Ngọc Trọng4", "0973123567", "Việt Nam", "trong30@gmail.com"));
+display(customers);
+</script>
+</html>

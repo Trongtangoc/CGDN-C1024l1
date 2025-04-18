@@ -1,0 +1,3 @@
+function externalJS(){
+    alert("externalJS")
+}

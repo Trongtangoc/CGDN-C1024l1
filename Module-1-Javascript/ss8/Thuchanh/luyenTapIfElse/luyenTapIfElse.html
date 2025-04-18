@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luyện tập If Else</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  let userName = prompt("Nhập tên đăng nhập");
+  if (userName == "Admin") {
+    let passWorld = prompt("Nhập mật khẩu");
+    if (passWorld == "TheMaster") {
+      alert("Welcome");
+    }
+    else if (passWorld == "null") {
+      alert("Canceled")
+    }
+    else {
+      alert("Wrong password")
+    }
+  }
+  else if (userName == "null") {
+        alert("Canceled")
+      }
+      else {
+        alert("I don't know you")
+      }
+</script>
+
+</html>

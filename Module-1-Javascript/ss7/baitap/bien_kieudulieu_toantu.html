@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<section>
+
+  <button id="diemtrungbinh" onclick="tinhDiemTrungBinhBai1()">check Bài 1: Tính điểm trung bình</button>
+  <p id="show diem trung binh"></p>
+    <button onclick="convertCtoF()">Bài 2:  Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit).</button>
+    <p id="converC"></p>
+    <button onclick="countAreCirce()"> Bài 3: Viết chương trình tính diện tích hình tròn</button>
+    <button onclick="chuVi()">Bài 4: Viết chương trình chu vi hình tròn</button>
+
+
+
+
+
+</section>
+
+</body>
+<script>
+
+    function tinhDiemTrungBinhBai1(){
+        let diemToan = +prompt("Nhập điểm Toán");
+        let diemLy = +prompt("Nhập điểm Lý");
+        let diemHoa = +prompt("Nhập điểm Hóa");
+        let TB = (diemToan + diemHoa + diemLy) / 3;
+        document.getElementById("show diem trung binh").innerHTML = "Điểm trung bình là: " + TB + "<br>" + "Điểm toán là: " + diemToan + "<br>" + "Điểm Lý là: " + diemLy+ "<br>" + "Điểm Hóa là: " + diemHoa;
+    }
+    function convertCtoF(){
+        let currentC = +prompt("Nhập giá trị độ C cần chuyển đổi");
+        let resultF = 0;
+        resultF = ((currentC/5)*9)+32;
+        alert(`${currentC} độ C đổi sang độ F là ${resultF} độ F`);
+    }
+    function countAreCirce(){
+        let duongKinh = +prompt("Nhập đường kính hình tròn");
+        let area = 0;
+        if( duongKinh > 0){
+            area = 3.14 * (duongKinh/2) * (duongKinh/2)
+        }
+        alert(area);
+    }
+    function chuVi(){
+        let duongKinh = +prompt("Nhập đường kính hình tròn");
+        let result = 0;
+        if (duongKinh > 0){
+        result = duongKinh * 3.14;
+        }
+        alert(result);
+    }
+</script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Máy Tính Đơn Giản</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .calculator {
+      border: 2px solid black;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+
+    }
+
+    #display {
+      width: 100%;
+      height: 40px;
+      text-align: right;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #e0e0e0;
+      transition: background-color 0.2s;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="calculator">
+    <input type="text" id="display">
+    <div class="buttons">
+      <button class="button" type="submit" onclick="getValueButton()" value="C" id="btn-clear">C</button>
+      <button class="button" type="submit" onclick="getValueButton()" value="7" id="btn-7">7</button>
+      <button class="button" type="submit" value="8" id="btn-8">8</button>
+      <button class="button" type="submit" value="9" id="btn-9">9</button>
+      <button class="button" type="submit" value="/" id="btn-divide">/</button>
+      <button class="button" type="submit" value="4" id="btn-4">4</button>
+      <button class="button" type="submit" value="5" id="btn-5">5</button>
+      <button class="button" type="submit" value="6" id="btn-6">6</button>
+      <button class="button" type="submit" value="*" id="btn-multiply">*</button>
+      <button class="button" type="submit" value="1" id="btn-1">1</button>
+      <button class="button" type="submit" value="2" id="btn-2">2</button>
+      <button class="button" type="submit" value="3" id="btn-3">3</button>
+      <button class="button" type="submit" value="=" id="btn-equal">=</button>
+      <button class="button" type="submit" value="0" id="btn-0">0</button>
+      <button class="button" type="submit" value="+" id="btn-add">+</button>
+      <button class="button" type="submit" value="-" id="btn-subtract">-</button>
+    </div>
+  </div>
+  <script>
+    // script.js
+    let display = document.getElementById("display");
+    let buttons = document.getElementsByClassName("button");
+    let currentInput = ""; // Biến lưu trữ đầu vào hiện tại
+    let operator = ""; // Biến lưu trữ phép toán
+    let firstOperand = ""; // Biến lưu trữ toán hạng đầu tiên
+
+    // Duyệt qua tất cả các nút và thêm sự kiện click
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].onclick = function () {
+        var value = this.innerText; // Lấy giá trị của nút được nhấn
+
+        if (value === "C") {
+          display.value = ""; // Xóa màn hình
+          currentInput = "";
+          operator = "";
+          firstOperand = "";
+        } else if (value === "=") {
+          if (firstOperand !== "" && currentInput !== "") {
+            var result = calculate(firstOperand, operator, currentInput);
+            display.value = result; // Hiển thị kết quả
+            firstOperand = result; // Cập nhật toán hạng đầu tiên
+            currentInput = ""; // Reset đầu vào hiện tại
+            operator = ""; // Reset phép toán
+          }
+        } else if (["+", "-", "*", "/"].includes(value)) {
+          if (currentInput !== "") {
+            if (firstOperand === "") {
+              firstOperand = currentInput; // Ghi nhớ toán hạng đầu tiên
+            } else {
+              var result = calculate(firstOperand, operator, currentInput);
+              display.value = result; // Hiển thị kết quả
+              firstOperand = result; // Cập nhật toán hạng đầu tiên
+            }
+            operator = value; // Cập nhật phép toán
+            currentInput = ""; // Reset đầu vào hiện tại
+          }
+        } else {
+          currentInput += value; // Thêm giá trị vào đầu vào hiện tại
+          display.value = currentInput; // Cập nhật màn hình
+        }
+      };
+    }
+
+    // Hàm tính toán
+    function calculate(firstOperand, operator, secondOperand) {
+      firstOperand = parseFloat(firstOperand);
+      secondOperand = parseFloat(secondOperand);
+
+      switch (operator) {
+        case "+":
+          return firstOperand + secondOperand;
+        case "-":
+          return firstOperand - secondOperand;
+        case "*":
+          return firstOperand * secondOperand;
+        case "/":
+          return firstOperand / secondOperand;
+        default:
+          return secondOperand; // Trả về toán hạng thứ hai nếu không có phép toán
+      }
+    }
+
+  </script>
+</body>
+
+</html>

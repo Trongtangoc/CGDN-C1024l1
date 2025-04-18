@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập cấu trúc điều kiện 1</title>
+    <style>
+        button {
+            margin: 10px;
+            background-color: #23b648;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 500px;
+            text-align: left;
+            position: relative;
+            left: 30%;
+        }
+
+        button:hover {
+            scale: 1.1;
+            background-color: rgb(24, 119, 207);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+<button onclick="checkBoiSo()">Bài 1: Click Kiểm tra một số có chia hết cho số khác không</button>
+<br>
+<button onclick="checkAgetoClass10()">Bài 2: Click Kiểm tra tuổi đủ điều kiện học lớp 10 không</button>
+<br>
+<button onclick="checkNumber()">Bài 3: Click me Kiểm tra số lớn hay nhỏ hơn 0</button>
+<br>
+<button onclick="checkMax()">Bài 4: Click me Tìm giá trị lớn nhất của ba số nguyên</button>
+<br>
+<button onclick="xepHangHocLuc()">Bài 5: Click me Xếp hạng học lực của học sinh</button>
+<br>
+<button onclick="hoaHong()">Bài 6: Click me Tính hoa hồng nhận được</button>
+<br>
+<button onclick="cuocDienThoai()">Bài 7: Click me Tính cước điện thoại</button>
+<br>
+</body>
+<script>
+    //   Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không
+    function checkBoiSo() {
+        let a = +prompt("Nhập vào số a");
+        let b = +prompt("Nhập vào số b");
+        if (a % b == 0) {
+            alert(a + " Chia hết cho " + b)
+        } else {
+            alert(a + " Không chia hết cho " + b)
+        }
+    }
+
+    // Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.
+    function checkAgetoClass10() {
+        let age = +prompt("Nhập vào tuổi của bạn");
+        if (age < 15) {
+            alert("Bạn không đủ điều kiện vào học lớp 10");
+        } else {
+            alert("Bạn đủ điều kiện vào học lớp 10");
+        }
+    }
+
+    // Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+    function checkNumber() {
+        let number = +prompt("Nhập vào số nguyên bất kỳ");
+        if (number === 0) {
+            alert("Không thể so sánh số 0 với chính nó");
+        } else if (number == null) {
+            alert("Bạn chưa nhập số");
+        } else if (number > 0) {
+            alert("Số " + number + " Là một số lớn hơn 0");
+        } else {
+            alert("Số " + number + " Là một số nhỏ hơn 0")
+        }
+        ;
+    }
+
+    // Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+
+    function checkMax() {
+        let a = +prompt("Nhập vào số a");
+        let b = +prompt("Nhập vào số b");
+        let c = +prompt("Nhập vào số c");
+        if (a > b && a > c) {
+            alert("Số" + a + " Là số lớn nhất ");
+        } else if (b > a && b > c) {
+            alert("Số " + b + " là số lớn nhất");
+        } else if (c > a && c > b) {
+            alert("Số " + c + " Là số lớn nhất")
+        }
+    }
+
+    // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+    function xepHangHocLuc() {
+        let diemBaiKiemTra = +prompt("Nhập điểm bài kiểm tra: ");
+        let diemThiGiuaKy = +prompt("Nhập điểm thi giữa kỳ: ");
+        let diemThiCuoiKy = +prompt("Nhập điểm thi cuối kỳ: ")
+
+        if (diemBaiKiemTra > 0 && diemThiGiuaKy > 0 && diemThiCuoiKy > 0 && diemBaiKiemTra <= 10 && diemThiGiuaKy <= 10 && diemThiCuoiKy <= 10 ) {
+            let tongDiem = Math.round(((diemBaiKiemTra + (diemThiGiuaKy * 0.5) + (diemThiCuoiKy * 0.9)) / 3) * 10) / 10;
+            if (tongDiem <= 4) {
+                alert("Học sinh có tổng điểm cả năm là: " + tongDiem + "." + " Học sinh đạt học lực Kém");
+            } else if (tongDiem < 5) {
+                alert("Học sinh có tổng điểm cả năm là: " + tongDiem + "." + " Học sinh đạt học lực Yếu");
+            } else if (tongDiem < 6.5) {
+                alert("Học sinh có tổng điểm cả năm là: " + tongDiem + "." + " Học sinh đạt học lực Trung Bình");
+            } else if (tongDiem < 7.5) {
+                alert("Học sinh có tổng điểm cả năm là: " + tongDiem + "." + " Học sinh đạt học lực Khá");
+            } else if (tongDiem <= 10) {
+                alert("Học sinh có tổng điểm cả năm là: " + tongDiem + "." + " Học sinh đạt học lực Giỏi");
+            }
+        }
+        else {
+                alert("Vui lòng nhập đúng số điểm trong khoảng từ 0 đến 10");
+        }
+    }
+
+
+    // Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+
+    function hoaHong() {
+        let doanhSo = +prompt("Nhập vào doanh số bán hàng: ");
+        let hoaHongNhanDuoc;
+        if (doanhSo <= 10000 && doanhSo >= 7000){
+            hoaHongNhanDuoc = ( doanhSo * 10) / 100;
+            alert(hoaHongNhanDuoc);
+        } else if ( doanhSo >= 5000){
+            hoaHongNhanDuoc = ( doanhSo * 5) / 100;
+            alert(hoaHongNhanDuoc);
+        } else {
+            alert("Tháng này bạn chưa đạt doanh số để nhận hoa hồng")
+        }
+
+    }
+    // Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+    function cuocDienThoai() {
+        let giaCuocTheoPhutGoiTren150phut = 2000;
+        let giaCuocTheoPhutGoiDuoi150phut = 1500;
+        let soPhutDaGoi = +prompt("Nhập số phút đã gọi");
+        let soTien
+        if (soPhutDaGoi >=150){
+            soTien = soPhutDaGoi * giaCuocTheoPhutGoiTren150phut;
+            alert("Bạn phải thanh toán " + soTien + "VND " + " cho " + soPhutDaGoi + " Phút đã gọi");
+        } else if ( soPhutDaGoi < 150) {
+            soTien = soPhutDaGoi * giaCuocTheoPhutGoiDuoi150phut;
+            alert("Bạn phải thanh toán " + soTien + " VND" + " cho " + soPhutDaGoi + " Phút đã gọi")
+        }
+    }
+</script>
+
+</html>

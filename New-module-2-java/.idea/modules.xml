@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Array-and-object-java/Array-and-object-java.iml" filepath="$PROJECT_DIR$/Array-and-object-java/Array-and-object-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Array-and-object-java/DeleteItemArray/DeleteItemArray.iml" filepath="$PROJECT_DIR$/Array-and-object-java/DeleteItemArray/DeleteItemArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Array-and-object-java/FindMin/FindMin.iml" filepath="$PROJECT_DIR$/Array-and-object-java/FindMin/FindMin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/New-module-2-java.iml" filepath="$PROJECT_DIR$/.idea/New-module-2-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReverseArray/ReverseArray.iml" filepath="$PROJECT_DIR$/ReverseArray/ReverseArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lession2-loops/lession2-loops.iml" filepath="$PROJECT_DIR$/lession2-loops/lession2-loops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/s4-OOP/s4-OOP.iml" filepath="$PROJECT_DIR$/s4-OOP/s4-OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system-time/system-time.iml" filepath="$PROJECT_DIR$/system-time/system-time.iml" />
+    </modules>
+  </component>
+</project>

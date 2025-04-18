@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ứng dụng do you love me</title>
+  <style>
+    button {
+      position: absolute;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #buttonNo {
+      left: 10%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Do you love me</h1>
+  <button onclick="yesFunction()">Yes</button>
+  <button id="buttonNo" onmouseover="randomIndex()">No</button>
+</body>
+<script>
+  //test
+  function yesFunction() {
+    alert("I love you too");
+  }
+  function randomIndex() {
+    let buttonNo = document.getElementById("buttonNo");
+    let windowHeight = window.innerHeight;
+    let windowWidth = window.innerWidth;
+    let randomLeft = Math.floor(Math.random() * (windowWidth - buttonNo.offsetWidth));
+    let randomTop = Math.floor(Math.random() * (windowHeight - buttonNo.offsetHeight));
+    buttonNo.style.left = randomLeft + 'px';
+    buttonNo.style.top = randomTop + 'px';
+  }
+
+
+</script>
+
+</html>

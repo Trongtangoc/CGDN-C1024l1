@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập thuật toán</title>
+    <style>
+        button {
+            color: black;
+            background-color: azure;
+            margin: 20px 0;
+            font-size: 15px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+        }
+        
+        .result {
+            width: 95%;
+            background-color: azure;
+            border: 1px solid black;
+            margin: 20px 10px;
+            padding: 0 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <button onclick="searchElement()">Bài 1: Vua An Dương Vương năm nay muốn xem xét lại trình độ của các
+                                          quan
+                                          chức bên dưới mình bằng một cuộc thi. Sau khi cuộc thi kết thúc thì nhà
+                                          vua đã
+                                          có danh sách điểm của các quan chức. <br>Bạn là thư kí của ông ấy và
+                                          bây giờ hãy
+                                          giúp ông ý viết một chương trình tìm ra người
+                                          có điểm cao thứ N trong danh sách điểm của các quan chức.<br>
+                                          Cho một mảng chứa các giá trị số và một số nguyên dương n. Tìm ra số
+                                          lớn thứ n
+                                          trong mảng đó.<br>
+                                          Nếu không có giá trị thoả mãn, trả về -1.<br>
+                                          Note : Không tính các số trùng lặp trong mảng.
+                                          Ví dụ
+                                          Với a = [6, 5, 4, 3, 2, 1], n = 1 thì đầu ra của chương trình
+                                          searchElement(a, n)
+                                          = 6<br>
+                                          Với a = [100, 100, 99, 98, 102, 103], n = 4 thì đầu ra của chương trình
+                                          searchElement(a, n) = 99<br>
+                                          Với a = [1, 2, 3, 4, 5] , n = 10 thì đầu ra của chương trình
+                                          searchElement(a, n)
+                                          = -1
+        </button>
+        <br></div>
+    <div class="result">
+        <p>Kết quả điểm cao thứ N trong danh sách điểm của các quan chức là :</p>
+        <p id="result1"></p>
+    </div>
+    
+    <div>
+        <button onclick="showResultBeautifulArray()">Bải 2:
+                                                     Một mảng được gọi là “đẹp” nếu mảng đó chứa một phần tử mà phần tử
+                                                     đó chia mảng
+                                                     làm 2 phần (không rỗng và không chứa phần tử đó) có tổng bằng nhau.<br>
+                                                     Hãy kiểm tra xem một mảng bất kì có phải là một mảng “đẹp” hay
+                                                     không?
+                                                     Ví dụ:<br>
+                                                     Với a = [1, 2, 3] thì kết quả beautifulArray(a) = false<br>
+                                                     Với a = [1, 2, 3, 3] đầu ra của chương trình sẽ là
+                                                     beautifulArray(a) = true<br>
+                                                     Chọn phần tử ở vị trí thứ 3 ([1, 2, 3, 3]), thì mảng ban đầu được
+                                                     chia thành 2 phần [1,2] và [3] có tổng
+                                                     2 phần bằng nhau
+        </button>
+        <br>
+    </div>
+    <div class="result">
+        <p>bài 2</p>
+        <p id="result2"></p>
+    </div>
+    <div>
+        <button onclick="showResultIsMonotonous()">
+            Bài 3
+            Cho một mảng các số nguyên, bạn hãy viết hàm kiểm tra xem các phần tử
+            của mảng có tạo thành một dãy số tăng dần hoặc giảm dần hay không, nếu có return true, ngược lại return
+            false<br>
+            Ví dụ:<br>
+            Với sequence = [1, 4, 5, 7, 9], thì kết quả là isMonotonous(sequence) = true<br>
+            Với sequence = [0], thì kết quả là isMonotonous(sequence) = true;<br>
+            Với sequence = [3, 3], thì kết quả là isMonotonous(sequence) = false.<br>
+            Giải thích: 2 phần tử bằng nhau không tạo thành dãy tăng hay dãy giảm.
+        </button>
+    </div>
+    <div class="result">
+        <p>bài 3</p>
+        <p id="result3"></p>
+    </div>
+
+
+</div>
+</body>
+<script>
+    function showMaxNum(arr, n) {
+        let newArr = [];
+        for ( let i = 0; i < arr.length; i++ ) {
+            //nếu phần tử thứ i không có trong mảng thì push phần tử đó vào
+            if ( !newArr.includes(arr[i]) ) {
+                newArr.push(arr[i]);
+            }
+        }
+        //sort mặc định là tăng dần . hàm sắp xếp mảng giảm dần
+        newArr.sort(function (a, b) {
+            return b - a;
+        });
+        // hàm sắp xếp mảng tăng dần
+        // newArr.sort(function (a, b) {
+        //     return a - b
+        // })
+        //hoặc sort((a, b) => b - a); Sắp xếp mảng giảm dần theo arrow function
+        
+        
+        //Check xem n có nằm trong độ dài mảng không. nếu không trả về -1
+        if ( n > newArr.length ) {
+            return -1;
+        }
+        return newArr[n - 1];
+        
+        // Sắp xếp mảng theo thứ tự giảm dần
+        uniqueValues.sort((a, b) => b - a);
+        
+        // Kiểm tra xem n có nằm trong giới hạn hay không
+        if ( n > uniqueValues.length ) {
+            return -1;
+        }
+        
+        // Trả về số lớn thứ n
+        return uniqueValues[n - 1];
+    }
+    
+    function searchElement() {
+        let newArray = [100, 100, 99, 98, 102, 103];
+        let result = showMaxNum(newArray, 4);
+        document.getElementById("result1").innerHTML = result;
+    }
+    
+    function beautifulArray(arr) {
+        
+        for ( let i = 0; i < arr.length; i++ ) {
+            let leftArr = 0;
+            let rightArr = 0;
+            for ( let j = 0; j < i; j++ ) {
+                leftArr += arr[j];
+            }
+            for ( let k = i + 1; k < arr.length; k++ ) {
+                rightArr += arr[k];
+            }
+            if ( leftArr === rightArr ) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    function showResultBeautifulArray() {
+        let arr = [1, 2, 4, 2, 7];
+        let resultResultBeautifulArray = beautifulArray(arr);
+        document.getElementById("result2").innerHTML = resultResultBeautifulArray;
+    }
+    
+    function isMonotonous(arr) {
+        let inCrease = true;
+        let deCrease = true;
+        for ( let i = 0; i < arr.length - 1; i++ ) {
+            if ( arr[i] > arr[i + 1] || arr[i] < arr[i + 1]) {
+                inCrease = false;
+            } else if ( arr[i] < arr[i + 1] ) {
+                deCrease = false
+            } else {
+                return false
+            }
+        }
+        return inCrease || deCrease;
+    }
+    function showResultIsMonotonous(){
+        let arr = [1, 2, 4, 5, 7];
+        let result = isMonotonous(arr)
+        document.getElementById("result3").innerHTML = result
+    }
+</script>
+</html>

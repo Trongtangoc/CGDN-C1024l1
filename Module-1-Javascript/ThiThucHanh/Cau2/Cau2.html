@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="diemSo()">Nhập điểm học viên</button>
+<p id="diemhocvien"></p>
+</body>
+<script>
+    function diemSo() {
+        let diemSo = +prompt("Nhập vào điểm học viên là số và phải nằm trong khoảng 0 đến 100");
+        while (isNaN(diemSo) || diemSo < 0 || diemSo > 100) {
+            diemSo = +prompt("Nhập lại điểm học viên là số và phải nằm trong khoảng 0 đến 100 ");
+        }
+        if (diemSo < 50 || diemSo === 48) {
+            alert("Trượt")
+        }
+        let soTiepTheo = diemSo
+        while (soTiepTheo % 5 !== 0) {
+            soTiepTheo++;
+        }
+        if (soTiepTheo - diemSo < 3) {
+            document.getElementById("diemhocvien").innerHTML = `Điểm học viên: ${diemSo} và điểm đã làm tròn ${soTiepTheo}`
+        } else {
+            document.getElementById("diemhocvien").innerHTML = `Điểm học viên: ${diemSo} không làm tròn`
+        }
+
+
+    }
+
+</script>
+</html>

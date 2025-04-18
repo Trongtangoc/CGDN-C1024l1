@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  class Product {
+    id;
+    name;
+    price;
+    manufacturer;
+    description;
+    sale(percent){
+      this.price = (1 - percent/100) * this.price;
+    }
+
+    constructor(id, name,price,manufacturer,description) {
+      this.id = id;
+      this.name = name;
+      this.price = price;
+      this.manufacturer = manufacturer;
+      this.description = description;
+    }
+  }
+let ss24 = new Product(1, "SS24 Ultra", 20000000,"SamSung","Hơi đắt");
+  console.log(ss24);
+  ss24.name = "SS24 Ultra Promax";
+  console.log(ss24);
+  ss24.sale(10)
+  console.log(ss24.price)
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form onsubmit="return false;">
+    <input type="number" id="valueDay">
+    <p id="result"></p>
+    <button type="submit" onclick="countDay()">Tính số ngày</button>
+
+  </form>
+
+
+</body>
+<script>
+
+
+
+  function countDay() {
+    let day = document.getElementById("valueDay").value;
+    day = parseInt(day);
+    switch (day) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        alert(`Tháng ${day} có 31 ngày`);
+        break;
+      case 2:
+        alert("tháng có 28 hoặc 29 ngày");
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        alert(`Tháng ${day} ngày`);
+        break
+      default:
+        alert("Vui lòng nhập tháng hợp lệ từ 1 đến 12");
+    }
+  }
+</script>
+
+</html>

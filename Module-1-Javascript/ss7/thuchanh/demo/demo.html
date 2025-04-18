@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+
+<body>
+     <label for="diemHocvienid">Điểm học viên (0-100):</label>
+        <input type="number" placeholder="Nhập điểm học viên" id="diemHocvienid" min="0" max="100" name="diemHocvien"
+            width="300px">
+        <input type="button" onclick="myDiemhocvien()" value="Kiểm tra">
+        <p id="demo"></p>
+
+
+<!--<form action="">-->
+<!--    <h1>-->
+<!--    Kiểm tra ngày thứ mấy:-->
+<!--</h1>-->
+<!--    <label for="randomnummber">Nhập vào 1 số: </label>-->
+<!--    <input type="number" id="randomnummber">-->
+<!--    <button type="submit" onclick="myRandomnumber()">Kiểm tra</button>-->
+<!--&lt;!&ndash;    <p id="demo"></p>&ndash;&gt;-->
+<!--</form>-->
+</body>
+
+<script>
+    // const PI = 3.14;// không gán lại được giá trị
+    // let diemToan = 9;
+    //     diemToan = 10;//gán lại được giá trị
+    // let a;
+    // console.log(typeof a)
+
+</script>
+<script >
+    // let diemHocvien = +prompt("Nhập điểm học viên")
+    function myDiemhocvien() {
+        let diemHocvien = document.getElementById("diemHocvienid").value;
+        diemHocvien > 75 ? alert("pass") : alert("fail") // toán tử 3 ngôi
+        if (diemHocvien >= 75) {
+            // alert("pass module") ;
+            document.getElementById("demo").innerHTML = "pass module"
+        }
+    }
+</script>
+<script>
+// function myRandomnumber() {
+//     let valueInput = document.getElementById("randomnummber").value;
+//     if (valueInput == 1) {
+//         // document.getElementById("demo").innerHTML = "Chủ nhật"
+//         alert("Chủ nhật")
+//     } else if (valueInput == 2) {
+//         alert("Thứ 2")
+//     } else if (valueInput == 3) {
+//         alert("Thứ 3")
+//     } else if (valueInput == 4) {
+//         alert("Thứ 4")
+//     } else if (valueInput == 5) {
+//         alert("Thứ 5")
+//     } else if (valueInput == 6) {
+//         alert("Thứ 6")
+//     } else if (valueInput == 7) {
+//         alert("Thứ 7")
+//     } else {
+//         alert("Không phải ngày trong tuần")
+//     }
+// }
+//Cách 2 kiểm tra thứ ngày
+// function myRandomnumber(){
+//     // Biến i đang trả về giá trị là string nên phải add thêm dấu "+" để chuyển đổi string thành number
+//     let i = +document.getElementById("randomnummber").value;
+//     switch (i){
+//         case 1:
+//             alert("Chủ nhật");
+//             break;
+//         case 2:
+//            alert("Thứ 2");
+//             break;
+//         case 3:
+//             alert("Thứ 3");
+//             break;
+//         case 4:
+//             alert("Thứ 4");
+//             break;
+//         case 5:
+//             alert("Thứ 5");
+//             break;
+//         case 6:
+//             alert("Thứ 6");
+//             break;
+//         case 7:
+//             alert("Thứ 7");
+//             break;
+//         default:
+//             alert("Không phải ngày trong tuần")
+//
+//     }
+// }
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>On Mouse Click</title>
+</head>
+<body>
+<img id="myImage" src="Screenshot%202024-09-24%20221519.png" width="200">
+<p>Click button below to move the image to right</p>
+<button onclick="moveRight()">Click Me</button>
+</body>
+<script>
+  let myImg;
+      myImg = document.getElementById("myImage");
+  function  init(){
+        myImg.style.position = "relative";
+        myImg.style.left = "0px"
+  }
+  function moveRight(){
+        myImg.style.left = parseInt(myImg.style.left) + 10 + "px";
+  }
+  window.onload = init()
+</script>
+</html>

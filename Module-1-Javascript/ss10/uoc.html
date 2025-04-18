@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body></body>
+  <script>
+    //Kiểm tra một số bất kỳ có phải là 1 số hoàn hảo hay không
+    // số hoàn hảo là tổng các ước (trừ chính nó) cộng lại bằng chính nó.
+    // vd số 6: 1+2+3 = 6
+    //let a = +prompt("nhap so a: ");
+    //inNaN: hàm kiểm tra có phải là một số hay không
+    // while (isNaN(a) || a <= 0){
+    // a = +prompt("a phải là một số hoặc là một số âm")
+    // }
+    //while đang sử dụng để kiểm tra điều kiện thứ 2 : a có phải là số hay không
+    // let sum = 0;
+    // for(let i = 0 ; i < a ; i++){
+    //     if (a % i === 0){
+    //       sum = sum + i;
+    //       // sum += i
+    //     }
+    //   }
+    // if (sum === a){
+    //   alert(a + "là số hoàn hảo");
+    // } else {
+    //   alert(a + "không phải là số hoàn hảo");
+    // }
+    //let soNguyenTo = 1;
+    // let count = 0;
+    // while (count < 10) {
+    //   let soNguyenTo = soNguyenTo;
+    //   if (soNguyenTo % soNguyenTo != 0 && soNguyenTo % 1 === 0) {
+    //     console.log(soNguyenTo);
+    //     soNguyenTo++;
+    //     count++;
+    //   }
+    // }
+//Số nguyên tố là một số CHỈ chia hết cho 1 và chính nó. tức là nó có 2 ƯỚC
+    // B1 Đếm số ước cần kiểm tra dùng vòng lặp thực hiện
+   // B2  kiểm tra nếu số ước === 2 thì n là số nguyên tố, ngược lại thì không phải
+   //  let num = +prompt("Nhập số cần kiểm tra")
+   //  let count = 0;
+   //  for ( let i = 1; i <= num ; i++){
+   //    if (num % i === 0){
+   //      count = count + 1; //count++
+   //    }
+   //  }
+   //  if (count === 2){
+   //    alert("Đây là số nguyên tố")
+   //  }
+
+
+
+  //   let soNguyenTo = 2; // Bắt đầu từ số nguyên tố đầu tiên
+  //   let count = 0;
+  //
+  //   while (count < 2) {
+  //     let isPrime = true; // Biến đánh dấu là số nguyên tố
+  // // vì isPrime là biến đếm  chỉ có 2 giá trị đúng hoặc sai . tức là có 2 ước hoặc không có ước nào.
+  //     //khi đó true có nghĩa là không có ước nào còn false có nghĩa là có thêm 1 ước nữa tức là đã lớn hơn 2 ước
+  //     // thì nó không phải là số nguyên tố.
+  //     // Kiểm tra xem soNguyenTo có phải là số nguyên tố hay không
+  //     for (let i = 2; i <= Math.sqrt(soNguyenTo); i++) {
+  //       if (soNguyenTo % i === 0) {
+  //         isPrime = false; // Nếu chia hết cho i, không phải số nguyên tố
+  //
+  //         break; // Dừng vòng lặp
+  //       }
+  //     }
+  //
+  //     // Nếu là số nguyên tố, in ra và tăng count
+  //     if (isPrime) {
+  //       console.log(soNguyenTo);
+  //       count++;
+  //     }
+  //
+  //     // Tăng giá trị để kiểm tra số tiếp theo
+  //     soNguyenTo++;
+  //   }
+
+//b1 cho vòng lặp chạy từ 2 cho đến ?? .
+    // b2 với mỗi số chúng ta kiểm tra số đó có phải là số nguyên tố không
+    // b3 đếm nếu nó là số nguyên tố
+    // b4 đủ 100 số thì dừng
+    let soNguyenTo2 = 2; // Bắt đầu từ số nguyên tố đầu tiên
+    let count2 = 0;
+    let isPrime;
+    while (count2 < 5) {
+      isPrime = true;
+      if (soNguyenTo2 === 2){
+//update
+      }
+       // Biến đánh dấu là số nguyên tố
+      // vì isPrime là biến đếm  chỉ có 2 giá trị đúng hoặc sai . tức là có 2 ước hoặc không có ước nào.
+      //khi đó true có nghĩa là không có ước nào còn false có nghĩa là có thêm 1 ước nữa tức là đã lớn hơn 2 ước
+      // thì nó không phải là số nguyên tố.
+      // Kiểm tra xem soNguyenTo có phải là số nguyên tố hay không
+      for (let i = 2; i <= Math.sqrt(soNguyenTo2); i++) {
+        if (soNguyenTo2 % i === 0) {
+          isPrime = false; // Nếu chia hết cho i, không phải số nguyên tố
+          break; // Dừng vòng lặp
+        }
+      }
+
+      // Nếu là số nguyên tố, in ra và tăng count
+      if (isPrime) {
+        console.log(soNguyenTo2);
+        count2++;
+      }
+
+      // Tăng giá trị để kiểm tra số tiếp theo
+      soNguyenTo2++;
+    }
+
+  </script>
+<!--<script>-->
+
+<!--  function timSoNguyenTo(n) {-->
+<!--    if (n <= 1) return false; // Số nguyên tố phải lớn hơn 1-->
+<!--    for (let i = 2; i <= Math.sqrt(n); i++) { // Chỉ kiểm tra đến căn bậc hai của n-->
+<!--      if (n % i == 0) return false; // Nếu chia hết cho i, không phải số nguyên tố-->
+<!--    }-->
+<!--    return true;-->
+<!--  }-->
+
+<!--  function inSoNguyenTo() {-->
+<!--    let count = 0;-->
+<!--    let number = 2;-->
+<!--    if ( n < = 1){-->
+<!--      alert("Số nguyên tố phải lớn hơn 1")-->
+<!--    }-->
+<!--    for (let i = 2; i <= n; i++){-->
+<!--      if (i % 2 === 0; i % 1 === 0){-->
+<!--        console.log(number)-->
+<!--      }-->
+<!--    }-->
+<!--    while (count < 10) { // Lặp cho đến khi tìm được 10 số nguyên tố-->
+<!--      if (timSoNguyenTo(number)) {-->
+<!--        console.log(number); // In ra số nguyên tố-->
+<!--        count++; // Tăng biến đếm-->
+<!--      }-->
+<!--      number++; // Kiểm tra số tiếp theo-->
+<!--    }-->
+<!--  }-->
+
+<!--  inSoNguyenTo();-->
+
+<!--</script>-->
+</html>
