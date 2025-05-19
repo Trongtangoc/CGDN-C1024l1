@@ -13,9 +13,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "ProductServlet", value = "/products")
+@WebServlet(name = "ProductServlet", urlPatterns = "/products")
 public class ProductServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    //    goi den cac method
     private ProductDAO productDAO;
 
     @Override
@@ -45,6 +46,8 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
+
+    //    Trong nay nhan ve action (trong form co action no se roi vao cac switch case va thuc hien cac method tuong ung)
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,12 +76,18 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
+//    truyen vao listProduct(HttpServletRequest request, HttpServletResponse response) 2 tham so
+//    khai bao List<Product> de goi den method findAllWithStoreProcedure() trong class productDAO
     private void listProduct(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException{
-            List<Product> listProducts = productDAO.findAllWithStoreProcedure();
+            List<Product> listProducts = productDAO.findAll();
+
+//  request.setAttribute ten: listProducts va du lieu listProducts
             request.setAttribute("listProducts", listProducts);
+//  sau do hien thi du lieu ra theo URL
             RequestDispatcher dispatcher = request.getRequestDispatcher("/product/list.jsp");
-            dispatcher.forward(request, response);
+
+        dispatcher.forward(request, response);
         }
 
 

@@ -14,7 +14,7 @@ public class Product {
         this.name = name;
         this.price = price;
     }
-
+//Add new Product. id auto increatement
     public Product(String name, double price) {
         this.name = name;
         this.price = price;

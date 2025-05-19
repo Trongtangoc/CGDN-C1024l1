@@ -3,8 +3,12 @@ package com.codegym.casestudyecommercewebsite.service;
 import java.sql.SQLException;
 import java.util.List;
 
+// tao interface de xu ly cac doi tuong sau nay. nen dung <E>
+//Chua cac astrack method
 public interface GeneralDAO <E>{
+
     List<E> findAll();
+
     List<E> findAllWithStoreProcedure();
     void save(E entity) throws SQLException;
     void saveWithStoreProcedure(E entity) throws SQLException;

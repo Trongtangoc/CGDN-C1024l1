@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <meta http-equiv="refresh" content="0; URL=products" />
 </head>
 <body>
 <h1><%= "Hello World!" %>

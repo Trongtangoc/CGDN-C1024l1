@@ -5,10 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
+//    Khai bao ten DB
     private static String jdbcURL = "jdbc:mysql://localhost:3306/db_mvc?useSSL=false";
+//    Khai bao username cua Workspench
     private static String jdbcUsername = "root";
+//    Khai bao pass cua Workspench
     private static String jdbcPassword = "1230Tl@#";
 
+//Default
     public static Connection getConnection() {
         Connection connection = null;
         try {
