@@ -1,6 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
+<web-app>
+    <servlet>
+        <servlet-name>RoomListServlet</servlet-name>
+        <servlet-class>controller.RoomListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RoomListServlet</servlet-name>
+        <url-pattern>/roomlists</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateRoomServlet</servlet-name>
+        <servlet-class>controller.CreateRoomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateRoomServlet</servlet-name>
+        <url-pattern>/CreateRoomServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteRoomServlet</servlet-name>
+        <servlet-class>controller.DeleteRoomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteRoomServlet</servlet-name>
+        <url-pattern>/DeleteRoomServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

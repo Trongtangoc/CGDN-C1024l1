@@ -48,6 +48,7 @@ public class ProductDAO implements GeneralDAO<Product> {
     public List<Product> findAllWithStoreProcedure() {
         List<Product> products = new ArrayList<>();
         String query = "{CALL sp_get_products()}";
+
         try (Connection connection = DBConnection.getConnection();
              CallableStatement callableStatement = connection.prepareCall(query)) {
             ResultSet resultSet = callableStatement.executeQuery();
